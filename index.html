@@ -1,0 +1,115 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>logo_cube</title>
+    <meta name="description" content="logo_cube" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a target="_blank" href="#">upgrade your browser</a> to improve your
+        experience.
+      </p>
+    <![endif]-->
+    <div class="cube-container">
+      <div class="cube rotate">
+        <!-- MAILTO -->
+        <a
+          class="face front"
+          target="_blank"
+          href="mailto:patryk.platek@onet.pl"
+        >
+          <div class="logo-container">
+            <img
+              src="./icons/email-address-svgrepo-com.svg"
+              class="logo selectDisable"
+            />
+          </div>
+        </a>
+        <!-- LINKEDIN -->
+        <a
+          target="_blank"
+          class="face back"
+          href="https://www.linkedin.com/in/patryk-p%C5%82atek-74a161226/"
+        >
+          <div class="logo-container">
+            <img
+              src="./icons/linkedin-svgrepo-com.svg"
+              class="logo selectDisable"
+            />
+          </div>
+        </a>
+        <!-- GITHUB -->
+        <a
+          target="_blank"
+          class="face left selectDisable"
+          href="https://github.com/SaberLS"
+        >
+          <div class="logo-container">
+            <img
+              src="./icons/github-svgrepo-com.svg"
+              class="logo selectDisable"
+            />
+          </div>
+        </a>
+        <!-- PHONE -->
+        <a target="_blank" class="face right" href="sms:517707259">
+          <div class="logo-container">
+            <img
+              src="./icons/phone-outgoing-alt-svgrepo-com.svg"
+              class="logo selectDisable"
+            />
+          </div>
+        </a>
+        <!-- CV -->
+        <a target="_blank" class="face top" href="">
+          <div class="logo-container">
+            <img
+              src="./icons/file-cv-svgrepo-com.svg"
+              class="logo selectDisable"
+            />
+          </div>
+        </a>
+        <!-- SOURCE CODE -->
+        <a target="_blank" class="face bottom" href="">
+          <div class="logo-container">
+            <img
+              src="./icons/code-svgrepo-com.svg"
+              class="logo selectDisable"
+            />
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <svg width="0" height="0">
+      <filter id="backlight" y="-50%" x="-50%" width="200%" height="200%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blurred" />
+        <feColorMatrix type="saturate" in="blurred" values="3" />
+        <feComposite in="SourceGraphic" operator="over" />
+      </filter>
+      <filter
+        id="backlight-strong"
+        y="-50%"
+        x="-50%"
+        width="200%"
+        height="200%"
+      >
+        <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blurred" />
+        <feColorMatrix type="saturate" in="blurred" values="3" />
+        <feComposite in="SourceGraphic" operator="over" />
+      </filter>
+    </svg>
+
+    <script src="./cubeHoverRotate.js"></script>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  --size: 20vh;
+  --alpha: 0.65;
+  --invert-color: invert(100%);
+  --backlight: url('#backlight');
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: dimgray;
+}
+
+.cube-container {
+  filter: var(--backlight);
+  height: var(--size);
+  width: var(--size);
+}
+
+.cube {
+  transform-style: preserve-3d;
+  transform-origin: center;
+  height: 100%;
+  width: 100%;
+  /* pointer event from children */
+  pointer-events: none;
+  transition: transform 0.8s 50ms linear;
+  transform: rotateX(0deg) rotateY(0deg);
+}
+
+.rotate {
+  animation: rotate 10s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+.face {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  transform-style: flat;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* pointer event to parent */
+  pointer-events: auto;
+  transition: transform 0.5s 200ms linear;
+}
+
+/* CV */
+.top {
+  background-color: rgba(29 161 242 / var(--alpha));
+  transform: rotateX(90deg) translate3d(0, 0, calc(var(--size) / 2));
+}
+
+.cube:hover .top {
+  transform: translate3d(0, calc(-1 * var(--size)), 0);
+}
+
+/* SOURCE CODE */
+.bottom {
+  background-color: rgba(255 0 0 / var(--alpha));
+  transform: rotateX(90deg) translate3d(0, 0, calc(var(--size) / -2));
+}
+
+.cube:hover .bottom {
+  transform: rotateX(0deg) translate3d(0, var(--size), 0);
+}
+
+/* github */
+.left {
+  background-color: rgba(225 225 0 / var(--alpha));
+  transform: rotateY(-90deg) translate3d(0, 0, calc(var(--size) / 2));
+}
+
+.cube:hover .left {
+  transform: translate3d(calc(-1 * var(--size)), 0, 0);
+}
+
+/* PHONE */
+.right {
+  background-color: rgba(0 204 0 / var(--alpha));
+  transform: rotateY(-90deg) translate3d(0, 0, calc(var(--size) / -2));
+}
+
+.cube:hover .right {
+  transform: translate3d(var(--size), 0, 0);
+}
+
+/* MAILTO */
+.front {
+  background-color: rgb(81 101 246 / var(--alpha));
+  transform: translate3d(0, 0, calc(var(--size) / 2));
+  transform-origin: right;
+}
+
+.front div img {
+  transform: rotateY(180deg);
+}
+
+.cube:hover .front {
+  transform: translate3d(var(--size), 0, 0) rotateY(180deg);
+}
+
+/* linkedin */
+.back {
+  background-color: rgba(12 100 197 / var(--alpha));
+  transform: translate3d(0, 0, calc(var(--size) / -2));
+}
+
+.cube:hover .back {
+  transform: translate3d(0, 0, 0);
+}
+
+.logo-container {
+  height: 80%;
+  pointer-events: none;
+}
+
+.logo {
+  height: 100%;
+  filter: var(--invert-color) var(--backlight);
+  pointer-events: none;
+}
+
+.select {
+  --alpha: 1;
+}
+
+.selectDisable {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
