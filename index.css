@@ -149,3 +149,17 @@ body {
   -o-user-select: none;
   user-select: none;
 }
+
+/* Small screens */
+@media (max-width: 800px) {
+  * {
+    --size: 15vh
+  }
+  .cube {
+    rotate: 90deg;
+  }
+
+  .logo {
+    rotate: -90deg;
+  }
+}
