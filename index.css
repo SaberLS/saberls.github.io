@@ -168,4 +168,8 @@ body {
   .logo {
     rotate: -90deg;
   }
+
+.front div img {
+  transform: rotateX(180deg);
+}
 }
